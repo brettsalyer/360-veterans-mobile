@@ -1,6 +1,7 @@
-# veterans_mobile
+# 360 Veterans Mobile
 
-A new Flutter project.
+A mobile application designed to enhance the user experience of the client of
+360 Veterans. 
 
 ## Getting Started
 
