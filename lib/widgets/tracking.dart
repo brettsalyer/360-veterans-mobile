@@ -10,10 +10,12 @@ class _TrackingState extends State<Tracking> {
   int _currentState = 0;
   List<StepState> _listState;
 
+  // Debug info
   _TrackingState() {
     print("Current State $_currentState");
   }
 
+  // Initializes the states
   @override
   void initState() {
     _currentState = 0;
@@ -25,6 +27,12 @@ class _TrackingState extends State<Tracking> {
     super.initState();
   }
 
+  /* 
+    Builds the steps with the appropriate states based on the current index
+    i.e, every step prior to the current should have a check mark icon
+    and every step after should be the step number. While the current step 
+    should be a pencil
+  */
   List<Step> _buildSteps() {
     List<Step> states = [
       Step(
@@ -113,27 +121,32 @@ class _TrackingState extends State<Tracking> {
     return states;
   }
 
+  // Builds the widget
   @override
   Widget build(BuildContext context) {
     print("Current State After Rebuild $_currentState");
     return Stepper(
-      steps: _buildSteps(),
+      steps: _buildSteps(), // Rebuilds the StepStates in the list above
       currentStep: _currentState,
+      // What happens when the continue button is tapped
       onStepContinue: () {
         setState(() {
           _currentState++;
         });
       },
+      // What happens when a step is tapped
       onStepTapped: (index) {
         setState(() {
           _currentState = index;
         });
       },
+      // What happens when the cancel button is tapped
       onStepCancel: () {
         setState(() {
           _currentState--;
         });
       },
+      // Hide the Coninue and Cancel buttons by building an empty container
       controlsBuilder: (context, {onStepCancel, onStepContinue}) {
         return Container();
       },
