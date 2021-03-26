@@ -45,9 +45,8 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     print("Rebuilding, with index = ");
     print(_selectedIndex);
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
+    // This method is rerun every time setState is called
+
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
