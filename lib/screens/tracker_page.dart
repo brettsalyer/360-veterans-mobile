@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:veterans_mobile/widgets/tracking.dart';
 
 /*
 Author: Brett Salyer
@@ -16,7 +17,7 @@ class _TrackerPageState extends State<TrackerPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text("Tracker Page"),
+      child: Tracking(),
     );
   }
 }

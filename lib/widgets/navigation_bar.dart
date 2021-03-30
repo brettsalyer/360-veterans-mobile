@@ -8,8 +8,8 @@ to reduce complexity in the main.dart file.
 */
 
 class NavBar extends StatefulWidget {
-  int selectedIndex;
-  ValueChanged<int> onClicked;
+  final int selectedIndex;
+  final ValueChanged<int> onClicked;
 
   NavBar({@required this.selectedIndex, @required this.onClicked});
   @override
