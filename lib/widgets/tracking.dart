@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:veterans_mobile/status_query.dart';
 
 class Tracking extends StatefulWidget {
   @override
@@ -13,6 +14,10 @@ class _TrackingState extends State<Tracking> {
   // Debug info
   _TrackingState() {
     print("Current State $_currentState");
+    StatusQuery sq = new StatusQuery(
+        firstName: "Steve", lastName: "Crane", email: "steve@mattcteam.com");
+
+    sq.query().then((value) => print(value.body));
   }
 
   // Initializes the states
