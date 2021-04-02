@@ -22,6 +22,8 @@ environment:
 
 dependencies:
   timelines: ^0.0.2+1
+  http: ^0.12.0+2
+
   flutter:
     sdk: flutter
 
