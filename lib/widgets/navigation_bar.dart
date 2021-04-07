@@ -22,12 +22,12 @@ class _NavBarState extends State<NavBar> {
     return BottomNavigationBar(
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
-          icon: Icon(Icons.home),
-          label: 'Home',
+          icon: Icon(Icons.view_list_rounded),
+          label: 'Status',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.track_changes),
-          label: 'Status',
+          icon: Icon(Icons.home),
+          label: 'Home',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.account_box),
@@ -36,6 +36,9 @@ class _NavBarState extends State<NavBar> {
       ],
       onTap: widget.onClicked,
       currentIndex: widget.selectedIndex,
+      backgroundColor: Colors.red,
+      selectedItemColor: Colors.lightBlueAccent,
+      unselectedItemColor: Colors.white,
     );
   }
 }

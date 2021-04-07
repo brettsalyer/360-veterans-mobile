@@ -14,9 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: '360 Veteran',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: ThemeData(),
       home: MainPage(title: 'Welcome to 360 Veteran!'),
     );
   }
@@ -32,8 +30,10 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  List<Widget> _pages = <Widget>[HomePage(), TrackerPage(), AccountPage()];
-  int _selectedIndex = 0;
+  List<Widget> _pages = <Widget>[TrackerPage(), HomePage(), AccountPage()];
+  List<String> _titles = <String>["Tracking", "Home", "Account"];
+
+  int _selectedIndex = 1;
 
   void _onItemTapped(int index) {
     setState(() {
@@ -54,8 +54,12 @@ class _MainPageState extends State<MainPage> {
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        title: Center(child: Text(_titles[_selectedIndex])),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        toolbarOpacity: 1,
       ),
+      backgroundColor: Colors.red,
       bottomNavigationBar: NavBar(
         selectedIndex: _selectedIndex,
         onClicked: _onItemTapped,
